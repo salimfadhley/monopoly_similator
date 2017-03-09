@@ -9,19 +9,33 @@ import scala.collection.mutable
   */
 case class GameState(numberOfPlayers: Int) {
   lazy val players: List[Player] = {
-    (0 until numberOfPlayers).map(Player(_)).toList
+    (0 until numberOfPlayers).map(Player).toList
   }
-  val playerPostions = mutable.HashMap[Player, Int]()
+  val playerPostions: mutable.Map[Player, Int] = mutable.HashMap[Player, Int]()
 
   def getPlayer(i: Int): Player = players(i)
+
+  def advancePlayer(player: Player, i: Int): Unit = {
+    (1 to i).foreach((_) => stepPlayer(player))
+    getPlayerLocation(player).landOnAction(this, player)
+  }
 
   def getPlayerLocation(player: Player): Location = MonopolyBoard.getLocation(getPlayerLocationNumber(player))
 
   def getPlayerLocationNumber(player: Player): Int = playerPostions.getOrElse(player, 0)
 
-  def advancePlayer(player: Player, i: Int) = {
-    val newLocation: Int = getPlayerLocationNumber(player) + i
+  def stepPlayer(player: Player): Unit = {
+    val newLocation: Int = getPlayerLocationNumber(player) + 1
     playerPostions += (player -> newLocation)
+    MonopolyBoard.getLocation(newLocation).passOverAction(this, player)
+  }
 
+  def goToJail(player: Player): Unit = {
+    movePlayer(player, MonopolyBoard.getLocationNumber("Jail"))
+  }
+
+  def movePlayer(player: Player, locationNumber: Int): Unit = {
+    playerPostions += (player -> locationNumber)
+    MonopolyBoard.getLocation(locationNumber).moveAction(this, player)
   }
 }

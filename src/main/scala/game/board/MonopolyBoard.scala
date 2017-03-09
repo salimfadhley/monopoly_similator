@@ -5,6 +5,7 @@ package game.board
   */
 object MonopolyBoard {
 
+  lazy val nameToLocationNumber: Map[String, Int] = locations.zipWithIndex.map((t: (Location, Int)) => (t._1.name, t._2)).toMap
   val locations:List[Location] = List(
     Go(),
     Property("Old Kent Road", 60),
@@ -47,6 +48,8 @@ object MonopolyBoard {
     SuperTax(),
     Property("Mayfair", 280)
   )
+
+  def getLocationNumber(s: String): Int = nameToLocationNumber(s)
 
   def getLocation(i: Int): Location = locations(i % locationCount)
 

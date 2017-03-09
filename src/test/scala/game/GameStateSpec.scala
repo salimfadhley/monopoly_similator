@@ -44,4 +44,11 @@ class GameStateSpec extends FlatSpec with Matchers {
     assert(gs.getPlayerLocation(p).name == "Community Chest")
   }
 
+  it should "be able to move players to jail" in {
+    val gs = GameState(2)
+    val p = gs.getPlayer(1)
+    gs.goToJail(p)
+    assert(gs.getPlayerLocation(p).name == "Jail")
+  }
+
 }
