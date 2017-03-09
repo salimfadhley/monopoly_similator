@@ -8,7 +8,11 @@ import org.scalatest.{FlatSpec, Matchers}
 class DiceSpec extends FlatSpec with Matchers {
 
   "dice" can "be thrown" in {
-    val r: DiceResult = Dice().throwDice
+    val r: DiceResult = Dice().diceThrow
+  }
+
+  it can "be used as a stream" in {
+    val r: DiceResult = Dice().throws.next()
   }
 
 }

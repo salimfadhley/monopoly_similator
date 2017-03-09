@@ -5,7 +5,7 @@ package game
   */
 object GameRules {
 
-  val dice: Dice = Dice(2, 6)
+  val dice: Dice = Dice()
 
   def gameRound(gs: GameState) = {
 
@@ -15,7 +15,7 @@ object GameRules {
   }
 
   def gameTurn(gs: GameState, player: Player) = {
-    val diceThrow = dice.throwDice
+    val diceThrow = dice.diceThrow
     gs.advancePlayer(player, diceThrow.score)
   }
 
