@@ -1,11 +1,27 @@
 package game
 
+import game.board.{Location, MonopolyBoard}
+
 import scala.collection.mutable
 
 /**
   * Created by salim on 3/9/2017.
   */
-class GameState {
+case class GameState(numberOfPlayers: Int) {
+  lazy val players: List[Player] = {
+    (0 until numberOfPlayers).map(Player(_)).toList
+  }
   val playerPostions = mutable.HashMap[Player, Int]()
 
+  def getPlayer(i: Int): Player = players(i)
+
+  def getPlayerLocation(player: Player): Location = MonopolyBoard.getLocation(getPlayerLocationNumber(player))
+
+  def getPlayerLocationNumber(player: Player): Int = playerPostions.getOrElse(player, 0)
+
+  def advancePlayer(player: Player, i: Int) = {
+    val newLocation: Int = getPlayerLocationNumber(player) + i
+    playerPostions += (player -> newLocation)
+
+  }
 }

@@ -48,7 +48,8 @@ object MonopolyBoard {
     Property("Mayfair", 280)
   )
 
-  def locationCount:Int = locations.length
+  def getLocation(i: Int): Location = locations(i % locationCount)
 
+  def locationCount:Int = locations.length
 
 }
