@@ -6,7 +6,7 @@ scalaVersion := "2.12.1"
 
 
 val scalatestVersion = "3.0.1"
-val main = "game.Game"
+val main = "simulation.Main"
 
 libraryDependencies ++= Seq(
   "org.slf4j" % "slf4j-simple" % "1.6.4",
