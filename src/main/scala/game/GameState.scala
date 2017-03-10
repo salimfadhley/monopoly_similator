@@ -41,8 +41,8 @@ case class GameState(numberOfPlayers: Int) {
     MonopolyBoard.getLocation(locationNumber).moveAction(this, player)
   }
 
-  def isPlayerInJail(player: Player): Boolean = {
-    jailStatus.getOrElse(player, false)
-  }
+  def isPlayerInJail(player: Player): Boolean = jailStatus.getOrElse(player, false)
+
+  def getOccupiedLocations: Iterator[Location] = playerPostions.valuesIterator.map(MonopolyBoard.getLocation)
 
 }
