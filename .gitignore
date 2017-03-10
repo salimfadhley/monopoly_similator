@@ -12,4 +12,11 @@ project/plugins/project/
 .lib/
 ### Scala template
 *.log
-.idea/libraries
+.idea/**/*.xml
+project/project/
+src/main/java/
+src/main/resources/
+src/main/scala-2.12/
+src/test/java/
+src/test/resources/
+src/test/scala-2.12/
