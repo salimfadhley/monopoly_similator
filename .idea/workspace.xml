@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2f0f482a-7f54-4269-b5e3-1725f09021c3" name="Default" comment="Enhancing dice rolling">
+    <list default="true" id="2f0f482a-7f54-4269-b5e3-1725f09021c3" name="Default" comment="Introduced jail logic and basic stats collection interface">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/game/AbstractDiceSet.scala" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/main/scala/game/Stats.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.gitignore" afterPath="$PROJECT_DIR$/.gitignore" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/game/Dice.scala" afterPath="$PROJECT_DIR$/src/main/scala/game/Dice.scala" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/game/GameRules.scala" afterPath="$PROJECT_DIR$/src/main/scala/game/GameRules.scala" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/game/DiceSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/game/DiceSpec.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/main/scala/game/GameState.scala" afterPath="$PROJECT_DIR$/src/main/scala/game/GameState.scala" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/test/scala/game/GameRulesSpec.scala" afterPath="$PROJECT_DIR$/src/test/scala/game/GameRulesSpec.scala" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -52,28 +56,48 @@
       <file leaf-file-name="GameState.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/game/GameState.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
+            <state relative-caret-position="462">
+              <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameRules.scala" pinned="false" current-in-tab="true">
+      <file leaf-file-name="GameRules.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/game/GameRules.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="154">
-              <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+            <state relative-caret-position="198">
+              <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="DiceResult.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/game/DiceResult.scala">
+      <file leaf-file-name="Stats.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/game/Stats.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="51" lean-forward="false" selection-start-line="5" selection-start-column="51" selection-end-line="5" selection-end-column="51" />
+            <state relative-caret-position="132">
+              <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameRulesSpec.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/game/GameRulesSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="314">
+              <caret line="31" column="68" lean-forward="false" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name=".gitignore" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/.gitignore">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -82,8 +106,38 @@
       <file leaf-file-name="Dice.scala" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/scala/game/Dice.scala">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="352">
-              <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            <state relative-caret-position="198">
+              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="AbstractDiceSet.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/game/AbstractDiceSet.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="220">
+              <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameStateSpec.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/test/scala/game/GameStateSpec.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="318">
+              <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Tax.scala" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/scala/game/board/Tax.scala">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="110">
+              <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
               <folding />
             </state>
           </provider>
@@ -93,57 +147,7 @@
         <entry file="file://$PROJECT_DIR$/src/test/scala/game/DiceSpec.scala">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="396">
-              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Location.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/game/board/Location.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="88">
-              <caret line="10" column="40" lean-forward="false" selection-start-line="10" selection-start-column="40" selection-end-line="10" selection-end-column="40" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="CannotMove.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/game/board/CannotMove.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="132">
-              <caret line="6" column="0" lean-forward="false" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MonopolyBoard.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/scala/game/board/MonopolyBoard.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="110">
-              <caret line="5" column="7" lean-forward="false" selection-start-line="5" selection-start-column="7" selection-end-line="5" selection-end-column="7" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MonopolyBoardSpec.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/game/board/MonopolyBoardSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="308">
-              <caret line="14" column="82" lean-forward="false" selection-start-line="14" selection-start-column="82" selection-end-line="14" selection-end-column="82" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="GameStateSpec.scala" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/test/scala/game/GameStateSpec.scala">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="286">
-              <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+              <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -191,24 +195,26 @@
         <option value="$PROJECT_DIR$/src/main/scala/game/IncomeTax.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/game/SuperTax.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/game/board/IncomeTax.scala" />
-        <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/build.sbt" />
         <option value="$PROJECT_DIR$/src/main/scala/game/Player.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/game/DiceResult.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/game/DiceResult.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/game/board/b.sc" />
-        <option value="$PROJECT_DIR$/src/test/scala/game/GameRulesSpec.scala" />
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/src/test/scala/game/GameStateSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/game/board/Board.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/game/MonopolyBoardSpec.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/game/board/MonopolyBoardSpec.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/game/board/CannotMove.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/game/GameState.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/game/board/Location.scala" />
-        <option value="$PROJECT_DIR$/src/main/scala/game/Dice.scala" />
         <option value="$PROJECT_DIR$/src/test/scala/game/DiceSpec.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/game/Dice.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/game/AbstractDiceSet.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/game/GameState.scala" />
+        <option value="$PROJECT_DIR$/src/main/scala/game/Stats.scala" />
         <option value="$PROJECT_DIR$/src/main/scala/game/GameRules.scala" />
+        <option value="$PROJECT_DIR$/src/test/scala/game/GameRulesSpec.scala" />
+        <option value="$PROJECT_DIR$/.gitignore" />
       </list>
     </option>
   </component>
@@ -1204,7 +1210,7 @@
       <updated>1489013397515</updated>
       <workItem from="1489013399342" duration="3251000" />
       <workItem from="1489018576272" duration="2336000" />
-      <workItem from="1489086836521" duration="12503000" />
+      <workItem from="1489086836521" duration="17968000" />
     </task>
     <task id="LOCAL-00001" summary="Tweak SBT">
       <created>1489018609625</created>
@@ -1241,43 +1247,50 @@
       <option name="project" value="LOCAL" />
       <updated>1489100731445</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Enhancing dice rolling">
+      <created>1489102124445</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1489102124445</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TestHistory">
-    <history-entry file="GameStateSpec - 2017.03.09 at 22h 19m 29s.xml">
-      <configuration name="GameStateSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="GameStateSpec - 2017.03.09 at 22h 32m 35s.xml">
-      <configuration name="GameStateSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="GameStateSpec - 2017.03.09 at 22h 44m 25s.xml">
-      <configuration name="GameStateSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="GameStateSpec - 2017.03.09 at 22h 44m 29s.xml">
-      <configuration name="GameStateSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="MonopolyBoardSpec - 2017.03.09 at 22h 36m 02s.xml">
-      <configuration name="MonopolyBoardSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="MonopolyBoardSpec - 2017.03.09 at 22h 41m 39s.xml">
-      <configuration name="MonopolyBoardSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="MonopolyBoardSpec - 2017.03.09 at 22h 41m 56s.xml">
-      <configuration name="MonopolyBoardSpec" configurationId="ScalaTestRunConfiguration" />
-    </history-entry>
-    <history-entry file="ScalaTests_in_'game' - 2017.03.09 at 23h 02m 41s.xml">
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 20h 52m 24s.xml">
       <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'game' - 2017.03.09 at 23h 27m 50s.xml">
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 12m 15s.xml">
       <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
-    <history-entry file="ScalaTests_in_'game' - 2017.03.09 at 23h 28m 32s.xml">
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 16m 27s.xml">
+      <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 21m 15s.xml">
+      <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 21m 45s.xml">
+      <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 27m 55s.xml">
+      <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 40m 15s.xml">
+      <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 40m 41s.xml">
+      <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 41m 42s.xml">
+      <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
+    </history-entry>
+    <history-entry file="ScalaTests_in_'game' - 2017.03.10 at 21h 42m 54s.xml">
       <configuration name="ScalaTests in 'game'" configurationId="ScalaTestRunConfiguration" />
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="18090000" />
+    <option name="totallyTimeSpent" value="23555000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="0" width="1924" height="1050" extended-state="0" />
@@ -1294,7 +1307,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Properties" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3299435" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -1361,7 +1374,8 @@
     <MESSAGE value="Update travis - use correct jdk version" />
     <MESSAGE value="Introduced the idea of square actions" />
     <MESSAGE value="Enhancing dice rolling" />
-    <option name="LAST_COMMIT_MESSAGE" value="Enhancing dice rolling" />
+    <MESSAGE value="Introduced jail logic and basic stats collection interface" />
+    <option name="LAST_COMMIT_MESSAGE" value="Introduced jail logic and basic stats collection interface" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REFORMAT_BEFORE_PROJECT_COMMIT" value="true" />
     <option name="REARRANGE_BEFORE_PROJECT_COMMIT" value="true" />
@@ -1593,14 +1607,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/game/board/Tax.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="110">
-          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/game/board/FreeParking.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
@@ -1613,14 +1619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="110">
           <caret line="5" column="11" lean-forward="false" selection-start-line="5" selection-start-column="11" selection-end-line="5" selection-end-column="11" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.gitignore">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="5" lean-forward="false" selection-start-line="16" selection-start-column="5" selection-end-line="16" selection-end-column="5" />
           <folding />
         </state>
       </provider>
@@ -1657,14 +1655,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/game/GameRulesSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="17" column="3" lean-forward="false" selection-start-line="17" selection-start-column="3" selection-end-line="17" selection-end-column="3" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/build.sbt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="352">
@@ -1677,14 +1667,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="44">
           <caret line="2" column="14" lean-forward="false" selection-start-line="2" selection-start-column="14" selection-end-line="2" selection-end-column="14" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/game/GameStateSpec.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="286">
-          <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
           <folding />
         </state>
       </provider>
@@ -1713,14 +1695,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/game/GameState.scala">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="32" column="36" lean-forward="false" selection-start-line="32" selection-start-column="36" selection-end-line="32" selection-end-column="36" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/game/board/Location.scala">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="88">
@@ -1737,26 +1711,82 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/scala/game/Dice.scala">
+    <entry file="file://$PROJECT_DIR$/src/test/scala/game/DiceSpec.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="352">
-          <caret line="16" column="39" lean-forward="false" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        <state relative-caret-position="396">
+          <caret line="18" column="0" lean-forward="false" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/scala/game/DiceSpec.scala">
+    <entry file="file://$PROJECT_DIR$/src/main/scala/game/board/Tax.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+        <state relative-caret-position="110">
+          <caret line="5" column="6" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/game/Dice.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/game/GameStateSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="318">
+          <caret line="49" column="13" lean-forward="false" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/game/GameState.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="462">
+          <caret line="44" column="38" lean-forward="false" selection-start-line="44" selection-start-column="38" selection-end-line="44" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/game/AbstractDiceSet.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="220">
+          <caret line="11" column="27" lean-forward="false" selection-start-line="11" selection-start-column="27" selection-end-line="11" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/scala/game/Stats.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="132">
+          <caret line="6" column="35" lean-forward="false" selection-start-line="6" selection-start-column="35" selection-end-line="6" selection-end-column="35" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/scala/game/GameRules.scala">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="154">
-          <caret line="7" column="24" lean-forward="false" selection-start-line="7" selection-start-column="24" selection-end-line="7" selection-end-column="24" />
+        <state relative-caret-position="198">
+          <caret line="12" column="18" lean-forward="false" selection-start-line="12" selection-start-column="18" selection-end-line="12" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/scala/game/GameRulesSpec.scala">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="314">
+          <caret line="31" column="68" lean-forward="false" selection-start-line="31" selection-start-column="68" selection-end-line="31" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/.gitignore">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="176">
+          <caret line="8" column="13" lean-forward="true" selection-start-line="8" selection-start-column="13" selection-end-line="8" selection-end-column="13" />
           <folding />
         </state>
       </provider>

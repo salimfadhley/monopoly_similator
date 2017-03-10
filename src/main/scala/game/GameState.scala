@@ -11,7 +11,8 @@ case class GameState(numberOfPlayers: Int) {
   lazy val players: List[Player] = {
     (0 until numberOfPlayers).map(Player).toList
   }
-  val playerPostions: mutable.Map[Player, Int] = mutable.HashMap[Player, Int]()
+  private val jailStatus: mutable.Map[Player, Boolean] = mutable.HashMap[Player, Boolean]()
+  private val playerPostions: mutable.Map[Player, Int] = mutable.HashMap[Player, Int]()
 
   def getPlayer(i: Int): Player = players(i)
 
@@ -31,6 +32,7 @@ case class GameState(numberOfPlayers: Int) {
   }
 
   def goToJail(player: Player): Unit = {
+    jailStatus += (player -> true)
     movePlayer(player, MonopolyBoard.getLocationNumber("Jail"))
   }
 
@@ -38,4 +40,9 @@ case class GameState(numberOfPlayers: Int) {
     playerPostions += (player -> locationNumber)
     MonopolyBoard.getLocation(locationNumber).moveAction(this, player)
   }
+
+  def isPlayerInJail(player: Player): Boolean = {
+    jailStatus.getOrElse(player, false)
+  }
+
 }

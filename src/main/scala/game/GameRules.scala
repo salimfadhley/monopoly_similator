@@ -3,21 +3,49 @@ package game
 /**
   * Created by salim on 3/9/2017.
   */
-object GameRules {
+case class GameRules(gs: GameState, dice: AbstractDiceSet = Dice(), stats: Option[Stats] = None) {
 
-  val dice: Dice = Dice()
-
-  def gameRound(gs: GameState) = {
-
-    gs.players.foreach((player: Player) => gameTurn(gs, player))
-
-
+  def gameRound(): Unit = {
+    // Each player takes their turn
+    gs.players.foreach((player: Player) => gameTurn(player))
+    stats match {
+      case Some(s) => s.logState(gs)
+      case None =>
+    }
   }
 
-  def gameTurn(gs: GameState, player: Player) = {
-    val diceThrow = dice.diceThrow
-    gs.advancePlayer(player, diceThrow.score)
+  def gameTurn(player: Player): Unit = {
+    val diceThrow0 = dice.diceThrow
+
+    if (playerCanMove(player, diceThrow0.matching)) {
+      gameMove(player, diceThrow0.score)
+
+      if (diceThrow0.matching) {
+        val diceThrow1 = dice.diceThrow
+        gameMove(player, diceThrow1.score)
+
+        if (diceThrow1.matching) {
+          val diceThrow2 = dice.diceThrow
+
+          if (diceThrow2.matching) {
+            gs.goToJail(player)
+          } else {
+            gameMove(player, diceThrow2.score)
+          }
+        }
+      }
+    }
   }
 
+  def gameMove(player: Player, spaces: Int): Unit = {
+    gs.advancePlayer(player, spaces)
+  }
 
+  def playerCanMove(player: Player, matching: Boolean): Boolean = {
+    (gs.isPlayerInJail(player), matching) match {
+      case (true, true) => true
+      case (false, _) => true
+      case _ => false
+    }
+  }
 }
