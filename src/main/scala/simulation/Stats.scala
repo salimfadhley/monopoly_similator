@@ -1,4 +1,6 @@
-package game
+package simulation
+
+import game.GameState
 
 /**
   * Created by salim on 3/10/2017.

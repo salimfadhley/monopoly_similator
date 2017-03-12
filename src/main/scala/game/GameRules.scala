@@ -1,9 +1,17 @@
 package game
 
+import simulation.Stats
+
 /**
   * Created by salim on 3/9/2017.
   */
 case class GameRules(gs: GameState, dice: AbstractDiceSet = Dice(), stats: Option[Stats] = None) {
+
+  def play(rounds:Int):Unit = {
+    for (elem <- 0.until(rounds)) {
+      gameRound()
+    }
+  }
 
   def gameRound(): Unit = {
     // Each player takes their turn
@@ -14,7 +22,7 @@ case class GameRules(gs: GameState, dice: AbstractDiceSet = Dice(), stats: Optio
     }
   }
 
-  def gameTurn(player: Player): Unit = {
+  def gameTurn(implicit player: Player): Unit = {
     val diceThrow0 = dice.diceThrow
 
     if (playerCanMove(player, diceThrow0.matching)) {
@@ -41,7 +49,7 @@ case class GameRules(gs: GameState, dice: AbstractDiceSet = Dice(), stats: Optio
     gs.advancePlayer(player, spaces)
   }
 
-  def playerCanMove(player: Player, matching: Boolean): Boolean = {
+  def playerCanMove(implicit player: Player, matching: Boolean): Boolean = {
     (gs.isPlayerInJail(player), matching) match {
       case (true, true) => true
       case (false, _) => true

@@ -8,6 +8,8 @@ import scala.collection.mutable
   * Created by salim on 3/9/2017.
   */
 case class GameState(numberOfPlayers: Int) {
+
+
   lazy val players: List[Player] = {
     (0 until numberOfPlayers).map(Player).toList
   }
@@ -39,6 +41,10 @@ case class GameState(numberOfPlayers: Int) {
   def movePlayer(player: Player, locationNumber: Int): Unit = {
     playerPostions += (player -> locationNumber)
     MonopolyBoard.getLocation(locationNumber).moveAction(this, player)
+  }
+
+  def movePlayer(p: Player, s: String):Unit = {
+    movePlayer(p, MonopolyBoard.getLocationNumber(s))
   }
 
   def isPlayerInJail(player: Player): Boolean = jailStatus.getOrElse(player, false)

@@ -1,4 +1,4 @@
-package game.util
+package simulation.util
 
 import scala.collection.mutable
 

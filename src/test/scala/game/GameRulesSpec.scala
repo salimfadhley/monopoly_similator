@@ -23,6 +23,27 @@ class GameRulesSpec extends FlatSpec with Matchers {
     val gr = GameRules(gs, dice)
     gr.gameTurn(p)
     assert(gs.getPlayerLocation(p).name == "Jail")
+    assert(gs.isPlayerInJail(p))
+  }
+
+
+
+  it should "put players in jail if they land on go to jail" in {
+    val gs = GameState(2)
+
+    case class FunnyDice() extends AbstractDiceSet {
+      override def diceThrow: DiceResult = DiceResult(3,false)
+    }
+    val dice = FunnyDice()
+
+
+    val p = gs.players.head
+    val gr = GameRules(gs, dice)
+    gs.movePlayer(p, "Coventry Street")
+    assert(gs.getPlayerLocation(p).name == "Coventry Street")
+    assert(!gs.isPlayerInJail(p))
+    gr.gameTurn(p)
+    assert(gs.getPlayerLocation(p).name == "Jail")
     assert(gs.isPlayerInJail(p), true)
   }
 

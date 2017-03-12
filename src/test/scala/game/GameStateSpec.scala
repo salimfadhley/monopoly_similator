@@ -51,4 +51,11 @@ class GameStateSpec extends FlatSpec with Matchers {
     assert(gs.getPlayerLocation(p).name == "Jail")
   }
 
+  it should "know that players start out not in jail" in {
+    val gs = GameState(2)
+    val p = gs.players.head
+    assert(!gs.isPlayerInJail(p))
+    
+  }
+
 }

@@ -6,7 +6,10 @@ import game.{DiceResult, GameState, Player}
   * Created by salim on 3/8/2017.
   */
 trait Location {
+
   val name:String
+
+  val price:Option[Int]
 
   // Called if you pass over this square
   def passOverAction(gs: GameState, p: Player): Unit = {}
@@ -17,8 +20,6 @@ trait Location {
   // Called if you land on this square
   def landOnAction(gs: GameState, p: Player): Unit = {}
 
-  // Called when you try to move way from this square
-  @throws(classOf[CannotMove])
-  def moveOnAction(gs: GameState, p: Player, dr: DiceResult): Unit = {}
+
 
 }
