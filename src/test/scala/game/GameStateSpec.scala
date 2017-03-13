@@ -41,7 +41,7 @@ class GameStateSpec extends FlatSpec with Matchers {
     val gs = GameState(2)
     val p = gs.getPlayer(0)
     gs.advancePlayer(p, MonopolyBoard.locationCount + 2)
-    assert(gs.getPlayerLocation(p).name == "Community Chest")
+    assert(gs.getPlayerLocation(p).name == "Community Chest 0")
   }
 
   it should "be able to move players to jail" in {

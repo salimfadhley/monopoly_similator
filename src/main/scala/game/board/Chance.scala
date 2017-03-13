@@ -3,6 +3,6 @@ package game.board
 /**
   * Created by salim on 3/8/2017.
   */
-case class Chance() extends PricelessLocation {
-  override val name: String = "Chance"
+case class Chance(number: Int) extends PricelessLocation {
+  override val name: String = s"Chance $number"
 }
