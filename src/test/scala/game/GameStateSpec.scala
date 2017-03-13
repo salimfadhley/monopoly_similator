@@ -55,7 +55,28 @@ class GameStateSpec extends FlatSpec with Matchers {
     val gs = GameState(2)
     val p = gs.players.head
     assert(!gs.isPlayerInJail(p))
-    
   }
+
+  it should "start with a turn counter set to zero" in {
+    val gs = GameState(2)
+    assert(gs.getTurn == 0)
+    assert(gs.currentPlayer == gs.players.head)
+  }
+
+  it should "increment the turn counter" in {
+    val gs = GameState(2)
+    assert(gs.nextTurn == 1)
+    assert(gs.currentPlayer == gs.players.tail.head)
+  }
+
+  it should "go back to the first player after everybdy has had a turn" in {
+    val gs = GameState(3)
+    assert(gs.nextTurn == 1)
+    assert(gs.nextTurn == 2)
+    assert(gs.nextTurn == 3)
+    assert(gs.currentPlayer == gs.players.head)
+  }
+
+
 
 }
