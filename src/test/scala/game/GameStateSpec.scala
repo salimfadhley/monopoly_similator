@@ -67,16 +67,35 @@ class GameStateSpec extends FlatSpec with Matchers {
     val gs = GameState(2)
     assert(gs.nextTurn == 1)
     assert(gs.currentPlayer == gs.players.tail.head)
+    assert(gs.getRound == 0)
   }
 
-  it should "go back to the first player after everybdy has had a turn" in {
+  it should "go back to the first player after everybody has had a turn" in {
     val gs = GameState(3)
     assert(gs.nextTurn == 1)
     assert(gs.nextTurn == 2)
+    assert(gs.getRound == 0)
     assert(gs.nextTurn == 3)
     assert(gs.currentPlayer == gs.players.head)
+    assert(gs.getRound == 1)
   }
 
+  it should "initially the last dice throw is none" in {
+    val gs = GameState(2)
+    assert(gs.lastDiceThrow.isEmpty)
+  }
 
+  it should "be able to roll the dice" in {
+    val gs = GameState(2)
+    val dr: DiceResult = gs.throwDice
+    assert(gs.lastDiceThrow.get == dr)
+  }
+
+  it should "reset the last roll when the next " in {
+    val gs = GameState(2)
+    gs.throwDice
+    gs.nextTurn
+    assert(gs.lastDiceThrow.isEmpty)
+  }
 
 }

@@ -7,20 +7,30 @@ import scala.collection.mutable
 /**
   * Created by salim on 3/9/2017.
   */
-case class GameState(numberOfPlayers: Int) {
+case class GameState(numberOfPlayers: Int, dice: Dice = Dice()) {
   lazy val players: List[Player] = {
     (0 until numberOfPlayers).map(Player).toList
   }
   private val jailStatus: mutable.Map[Player, Boolean] = mutable.HashMap[Player, Boolean]()
   private val playerPostions: mutable.Map[Player, Int] = mutable.HashMap[Player, Int]()
+  var lastDiceThrow: Option[DiceResult] = None
   private var turn: Int = 0
 
-  def nextTurn = {
+  def throwDice: DiceResult = {
+    val dt = dice.diceThrow
+    lastDiceThrow = Some(dt)
+    dt
+  }
+
+  def nextTurn: Int = {
     turn = getTurn + 1
+    lastDiceThrow = None
     turn
   }
 
-  def getTurn = turn
+  def getTurn: Int = turn
+
+  def getRound: Int = turn / numberOfPlayers
 
   def currentPlayer: Player = {
     getPlayer(getTurn % numberOfPlayers)
@@ -48,13 +58,13 @@ case class GameState(numberOfPlayers: Int) {
     movePlayer(player, MonopolyBoard.getLocationNumber("Jail"))
   }
 
-  def movePlayer(p: Player, s: String): Unit = {
-    movePlayer(p, MonopolyBoard.getLocationNumber(s))
-  }
-
   def movePlayer(player: Player, locationNumber: Int): Unit = {
     playerPostions += (player -> locationNumber)
     MonopolyBoard.getLocation(locationNumber).moveAction(this, player)
+  }
+
+  def movePlayer(p: Player, s: String): Unit = {
+    movePlayer(p, MonopolyBoard.getLocationNumber(s))
   }
 
   def isPlayerInJail(player: Player): Boolean = jailStatus.getOrElse(player, false)
